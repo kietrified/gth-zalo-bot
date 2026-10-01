@@ -1,0 +1,41 @@
+{
+  "_comment_groups": "Fill in the two group IDs after running `npm run inspect` once (see README step 3).",
+  "managedGroupIds": [
+    "3162373498347002210"
+  ],
+  "_comment_welcome": "Sent when someone new joins a managed group. Use {name} for the new member's display name.",
+  "welcomeMessage": {
+    "enabled": false,
+    "text": "Chào mừng {name} đến với nhóm của Ghiền Tiếng Hàn! 🎉 Hãy đọc ghim (pinned message) để biết nội quy và lịch học nhé."
+  },
+  "_comment_keywords": "Case-insensitive substring match against incoming group messages. First match wins. Add as many as you want.",
+  "keywordReplies": [
+    {
+      "triggers": ["học phí", "giá", "bảng giá"],
+      "reply": "Bạn xem bảng học phí mới nhất tại đây nhé: https://www.facebook.com/ghientienghan22. Cần tư vấn thêm thì nhắn admin ạ!",
+      "enabled": true
+    },
+    {
+      "triggers": ["lịch học", "lịch khai giảng"],
+      "reply": "Lịch khai giảng các lớp được cập nhật tại: https://www.facebook.com/ghientienghan22",
+      "enabled": true
+    }
+  ],
+  "_comment_timing": "Human-like delay before replying, in milliseconds. A random value in this range is picked each time so replies don't look robotic/instant.",
+  "replyDelayMsRange": [
+    4000,
+    15000
+  ],
+  "_comment_ratelimit": "Safety cap: max auto-replies the bot will send per rolling hour, across all groups. Keeps behavior far from anything that looks like bulk messaging.",
+  "maxRepliesPerHour": 20,
+  "_comment_poll": "How often (ms) to check each group's member list for new joiners. zca-js doesn't push a reliable join event, so this polls instead. 120000 = 2 minutes; don't set this too low, it's an extra API call per group each tick.",
+  "pollIntervalMs": 120000,
+  "_comment_timezone": "Used for all scheduled reminders (reminders.json), independent of what timezone the server/VPS itself is set to.",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "_comment_reminder_ratelimit": "Safety cap: max scheduled reminder messages sent per rolling hour, across all reminders/groups. Guards against a misconfigured reminders.json firing too often.",
+  "maxRemindersPerHour": 30,
+
+  "_comment_toggles": "Master on/off switches, editable live from the admin dashboard (or by hand here).",
+  "autoReplyEnabled": true,
+  "remindersEnabled": true
+}

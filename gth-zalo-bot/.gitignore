@@ -1,0 +1,7 @@
+node_modules/
+data/session.json
+data/users.json
+data/.session-secret
+data/reminder-state.json
+data/members/
+*.log

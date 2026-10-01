@@ -1,0 +1,41 @@
+[
+  {
+    "_comment": "EXAMPLE — recurring weekly class reminder. Delete or edit this once you've tested it.",
+    "id": "topik-class-mon-wed",
+    "enabled": true,
+    "groupIds": ["3162373498347002210"],
+    "recurrence": {
+      "type": "weekly",
+      "daysOfWeek": ["monday", "wednesday","tuesday"]
+    },
+    "eventTime": "22:20",
+    "leadTimes": ["0m"],
+    "message": "⏰ Nhắc nhở: lớp học sẽ bắt đầu sau {leadTime} nữa, lúc {time}! Mọi người chuẩn bị sẵn sàng nhé 📚"
+  },
+  {
+    "_comment": "EXAMPLE — one-off event, multiple lead times (fires once at each).",
+    "id": "free-livestream-lesson",
+    "enabled": true,
+    "groupIds": ["3162373498347002210"],
+    "recurrence": {
+      "type": "once",
+      "date": "2026-09-29"
+    },
+    "eventTime": "22:26",
+    "leadTimes": ["1h", "0m"],
+    "message": "🔴 Buổi học thử MIỄN PHÍ livestream trên Facebook sẽ bắt đầu sau {leadTime} nữa, lúc {time} hôm nay! Đừng bỏ lỡ nha!"
+  },
+  {
+    "_comment": "EXAMPLE — monthly reminder, e.g. tuition/payment due date. 'dayOfMonth' is the date it fires (5 = the 5th of every month). To test today: temporarily set dayOfMonth to today's date and eventTime a few minutes from now, run the bot, then change it back.",
+    "id": "monthly-tuition-reminder",
+    "enabled": true,
+    "groupIds": ["3162373498347002210"],
+    "recurrence": {
+      "type": "monthly",
+      "dayOfMonth": 29
+    },
+    "eventTime": "23:05",
+    "leadTimes": ["0m"],
+    "message": "📌 Nhắc nhở: hôm nay là hạn đóng học phí tháng này nhé!"
+  }
+]

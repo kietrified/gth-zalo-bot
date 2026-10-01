@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GTH Bot — Đăng nhập</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-body">
+  <form id="loginForm" class="login-card">
+    <h1>GTH Bot Dashboard</h1>
+    <p class="subtitle">Đăng nhập để quản lý nhắc nhở &amp; tin nhắn tự động</p>
+    <label>
+      Tên đăng nhập
+      <input type="text" id="username" autocomplete="username" required />
+    </label>
+    <label>
+      Mật khẩu
+      <input type="password" id="password" autocomplete="current-password" required />
+    </label>
+    <button type="submit">Đăng nhập</button>
+    <p id="error" class="error"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const errorEl = document.getElementById("error");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      errorEl.textContent = "";
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      try {
+        const res = await fetch("/api/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          errorEl.textContent = data.error || "Đăng nhập thất bại.";
+          return;
+        }
+        window.location.href = "/index.html";
+      } catch (err) {
+        errorEl.textContent = "Không thể kết nối tới server.";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "gth-zalo-bot",
+  "version": "1.0.0",
+  "description": "Event-based auto-responder for GTH's own Zalo groups (welcome messages + keyword replies).",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "login": "node src/login.js",
+    "inspect": "node src/inspect-events.js",
+    "start": "node src/index.js",
+    "start:bot-only": "node src/bot.js",
+    "add-user": "node src/admin/create-user.js",
+    "remove-user": "node src/admin/create-user.js remove",
+    "list-users": "node src/admin/create-user.js list"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "zca-js": "^2.1.2"
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GTH Bot Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>GTH Bot Dashboard</h1>
+    <div class="topbar-right">
+      <span id="whoami"></span>
+      <button id="logoutBtn" class="secondary small">Đăng xuất</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <p id="loadingMsg">Đang tải...</p>
+
+    <section id="togglesSection" class="card hidden">
+      <h2>Bật / Tắt tính năng</h2>
+      <label class="switch-row">
+        <input type="checkbox" id="toggleWelcome" />
+        Tin nhắn chào mừng thành viên mới
+      </label>
+      <label class="switch-row">
+        <input type="checkbox" id="toggleAutoReply" />
+        Tự động trả lời theo từ khóa
+      </label>
+      <label class="switch-row">
+        <input type="checkbox" id="toggleReminders" />
+        Nhắc nhở theo lịch (lớp học, sự kiện...)
+      </label>
+      <p class="hint">Thay đổi có hiệu lực ngay lập tức, không cần khởi động lại bot.</p>
+    </section>
+
+    <section id="welcomeSection" class="card hidden">
+      <h2>Nội dung tin nhắn chào mừng</h2>
+      <p class="hint">Dùng <code>{name}</code> để chèn tên thành viên mới.</p>
+      <textarea id="welcomeText" rows="3"></textarea>
+      <button id="saveWelcomeBtn">Lưu tin nhắn chào mừng</button>
+      <span class="save-status" id="welcomeStatus"></span>
+    </section>
+
+    <section id="keywordsSection" class="card hidden">
+      <h2>Trả lời tự động theo từ khóa</h2>
+      <p class="hint">Khi có tin nhắn trong nhóm chứa một trong các từ khóa, bot sẽ tự động trả lời.</p>
+      <div id="keywordList"></div>
+      <button id="addKeywordBtn" class="secondary">+ Thêm quy tắc</button>
+      <div class="save-row">
+        <button id="saveKeywordsBtn">Lưu tất cả quy tắc</button>
+        <span class="save-status" id="keywordsStatus"></span>
+      </div>
+    </section>
+
+    <section id="remindersSection" class="card hidden">
+      <h2>Nhắc nhở theo lịch</h2>
+      <p class="hint">Lớp học, sự kiện, livestream, hạn đóng học phí,...</p>
+      <div id="reminderList"></div>
+      <button id="addReminderBtn" class="secondary">+ Thêm nhắc nhở</button>
+      <div class="save-row">
+        <button id="saveRemindersBtn">Lưu tất cả nhắc nhở</button>
+        <span class="save-status" id="remindersStatus"></span>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
